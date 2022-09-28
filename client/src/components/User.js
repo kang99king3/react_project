@@ -21,6 +21,7 @@ const Users = () => {
   return (
     <div>
       <h1>Users Component</h1>
+      <h2>회원목록</h2>
       <ul>{userInfo}</ul>
     </div>
   );
