@@ -2,7 +2,28 @@ const express = require("express");
 const app = express();
 const users = require("./router/users");
 
+/* DB 연결은 관련 코드만 추가했고, express에서 Connection pool을 관리하는 코드 찾아보고 수정해야함
+//mariaDB connect
+const maria = require("./my-app/database/connect/maria");
+maria.connect();
+
+app.get('/select',function(req,res){
+  maria.query('select * from hk',function(err,result,field){
+      if(!err){
+          console.log(result);
+         // res.json({rows : rows})
+          res.send(result);
+      }else{
+          console.log("err:"+err);
+          res.send(err);
+      }
+  });
+
+})
+*/
+
 app.use(express.json());
+//도메인에서 다른 도메인으로 데이터를 잘 전달시키기 위한 라이브러리 cors
 var cors = require("cors");
 app.use(cors());
 
